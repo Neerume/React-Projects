@@ -3,10 +3,6 @@ import { motion } from "framer-motion";
 import Boba1 from '../assets/PinkBoba.png'
 import Boba2 from '../assets/PurpleBoba.png'
 import Boba3 from '../assets/greenBoba.png'
-import Cake1 from '../assets/Cake1.png'
-import Cake2 from '../assets/Cake2.png'
-import Cake3 from '../assets/Cake3.png'
-import Cake4 from '../assets/Cake4.png'
 import Background from '../assets/Background.jpg'
 
 const drinks=[
@@ -29,7 +25,9 @@ const drinks=[
     price:"$40",
     description:"Fresh matcha bubble tea crafted with premium ingredients and creamy flavors.",
     image: Boba3,
-    color: "text-green-600"
+    color: "text-green-600",
+    size: "w-[400px]"
+
   }
 
 ]
@@ -52,6 +50,7 @@ return(
       <div className='flex justify-evenly gap-5 md:ml-10 md:mr-5' >
 
        <motion.div
+            key={item.title}
             initial={{opacity:0, y:50}}
             whileInView={{opacity:1, y:0}}
             transition={{duration:1, ease:"easeOut"}}
@@ -68,12 +67,13 @@ return(
         </motion.div>
 
         <motion.div
+          key={currentDrink}
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, type: "spring", stiffness: 100, damping: 6, mass: 2 }}
           className="flex"
         >
-          <img src={item.image} alt={item.title} className='w-[450px] h-auto object-cover'></img>
+          <img src={item.image} alt={item.title} className={`${item.size || "w-[450px]"} h-auto object-cover`}></img>
         </motion.div>
 
       </div>
