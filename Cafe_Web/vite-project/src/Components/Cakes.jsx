@@ -4,13 +4,14 @@ import Cake2 from '../assets/Cake2.png'
 import Cake3 from '../assets/Cake3.png'
 import Cake4 from '../assets/Cake4.png'
 import { color } from 'framer-motion'
+import Coffee from '../assets/Coffee.png'
 
 const cakes = [
   {
     title: "Raspberry Cake",
     desc: "Yummy raspberry flavor",
     image: Cake1,
-    color: "bg-pink-100",
+    color: "bg-[#fceed1]",
     size: "w-[150px]"
 
   },
@@ -18,19 +19,19 @@ const cakes = [
     title: "Chocolate Cake",
     desc: "Rich Chocolate flavor",
     image: Cake2,
-    color: "bg-white"    
+    color: " bg-[#DCC7AA]"    
   },
   {
     title: "BlueBerry Cake",
     desc: "Creamy blueberry flavor",
     image: Cake3,
-    color: "bg-blue-100"
+    color: "bg-[#fceed1]"
   },
   {
     title: "Vanilla Cake",
     desc: "Classic vanilla flavor",
     image: Cake4,
-    color: "bg-pink-100"
+    color: "bg-[#DCC7AA]"
   }
 ]
 const Cakes = () => {
@@ -51,9 +52,29 @@ const Cakes = () => {
               className={`${cake.size || "w-[450px]"} max-h-full object-contain`}
             />
           </div>        
-          <p className='text-gray-300 text-center'>{cake.desc}</p>
+          <p className='eagle-lake-regular text-[#5C4033] text-center'>{cake.desc}</p>
         </div>
           ))}
+        </div>
+
+
+        <div className='flex flex-wrap justify-center gap-10 -mt-5'>
+          <div>
+            <img src={Coffee} alt="Coffee" className='w-[400px] object-cover'></img>
+          </div>
+          <div className='w-[600px] flex flex-col justify-center '>
+            <h1 className='eagle-lake-regular text-6xl text-[#5C4033] text-center p-4'>Delicious Coffee</h1>
+            <p className='noto-serif p-4 text-[#5C4033] text-center leading-8'>
+              Discover the rich aroma and smooth taste of our freshly brewed coffee,
+              crafted from premium beans to give you the perfect balance of flavor and warmth.
+              Every sip is made to comfort your soul and awaken your senses.
+            </p>
+            <p className='noto-serif p-4 text-[#5C4033] text-center leading-8'>
+              Whether you enjoy a creamy latte, a bold espresso, or a classic cappuccino,
+              our coffee is prepared with care and passion to create a cozy experience
+              you will always come back for.
+            </p>
+          </div>
         </div>
     </div>
   )
