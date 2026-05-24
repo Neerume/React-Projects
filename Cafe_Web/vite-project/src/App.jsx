@@ -1,6 +1,7 @@
 import Navbar from "./Components/Navbar"
 import Hero from "./Components/Hero"
 import Cakes from "./Components/Cakes"
+import Footer from "./Components/Footer"
 
 function App() {
   return(
@@ -9,6 +10,7 @@ function App() {
      <Navbar/>
      <Hero/>
      <Cakes/>
+     <Footer/>
     </div>
   )}
 
