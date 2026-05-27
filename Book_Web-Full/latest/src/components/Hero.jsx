@@ -4,6 +4,12 @@ import horror from '../assets/horror.png'
 import fantasy from '../assets/fantasy.png'
 import romance from '../assets/romance.png'
 import scifi from '../assets/scifi.png'
+import { SiAnimedotjs } from "react-icons/si";
+import { GiUnicorn } from "react-icons/gi";
+import { GiLovers } from "react-icons/gi";
+import { GiGhost } from "react-icons/gi";
+import { GiMadScientist } from "react-icons/gi";
+
 
 const Hero=()=>{
    const images=[action,horror,fantasy,romance,scifi]
@@ -17,7 +23,8 @@ const Hero=()=>{
 
   },[])
    return (
-    <div className="overflow-hidden w-full mt-10">
+    <div>
+      <div className="overflow-hidden w-full mt-10">
 
       <div
         className="flex gap-4 transition-transform duration-700"
@@ -36,7 +43,34 @@ const Hero=()=>{
 
       </div>
 
-    </div>
+      </div>
+      <div className="md:m-15 m-10">
+        <h1 className="text-4xl noto-serif font-bold">Genres</h1>
+        <p className="noto-serif pt-2">Browse Our Extensive Collection of Books Across Different Genres.</p>
+      </div>
+      <div className="flex gap-10 justify-center">
+        <div className="flex flex-col items-center p-2">
+          <GiGhost className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
+          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+        </div>
+        <div className="flex flex-col items-center p-2">
+          <SiAnimedotjs className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
+          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+        </div>
+        <div className="flex flex-col items-center p-2">
+          <GiUnicorn className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
+          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+        </div>
+         <div className="flex flex-col items-center p-2">
+          <GiLovers className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
+          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+        </div>
+        <div className="flex flex-col items-center p-2">
+          <GiMadScientist className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
+          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+        </div>
+      </div>
+  </div>
   )
 }
 
