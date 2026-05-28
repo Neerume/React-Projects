@@ -45,29 +45,29 @@ const Hero=()=>{
 
       </div>
       <div className="md:m-15 m-10">
-        <h1 className="text-4xl noto-serif font-bold">Genres</h1>
-        <p className="noto-serif pt-2">Browse Our Extensive Collection of Books Across Different Genres.</p>
+        <h1 className="text-4xl noto-serif font-semibold mb-2 ">Genres</h1>
+        <p className="noto-serif pt-2 text-gray-500">Browse Our Extensive Collection of Books Across Different Genres.</p>
       </div>
-      <div className="flex gap-10 justify-center">
+      <div className="flex gap-10 justify-center noto-seri">
         <div className="flex flex-col items-center p-2">
           <GiGhost className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
-          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+          <h2 className="text-xl w-[200px] text-center p-3">Horror, Mystery and Thriller</h2>
         </div>
         <div className="flex flex-col items-center p-2">
-          <SiAnimedotjs className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
-          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+          <SiAnimedotjs className=" text-8xl border-gray-800 bg-gray-200 text-green-500 rounded-full p-4"/>
+          <h2 className="text-xl w-[200px] text-center p-3">Fight, action, story</h2>
         </div>
         <div className="flex flex-col items-center p-2">
-          <GiUnicorn className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
-          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+          <GiUnicorn className=" text-8xl border-gray-800 bg-gray-200 text-blue-500 rounded-full p-4"/>
+          <h2 className="text-xl w-[200px] text-center p-3">Fantasy</h2>
         </div>
          <div className="flex flex-col items-center p-2">
-          <GiLovers className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
-          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+          <GiLovers className=" text-8xl border-gray-800 bg-gray-200 text-pink-500 rounded-full p-4"/>
+          <h2 className="text-xl w-[200px] text-center p-3">Romance</h2>
         </div>
         <div className="flex flex-col items-center p-2">
-          <GiMadScientist className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
-          <h2 className="text-xl font-semibold w-[200px] text-center p-2">Horror, Mystery and Thriller</h2>
+          <GiMadScientist className=" text-8xl border-gray-800 bg-gray-200 text-yellow-500 rounded-full p-4"/>
+          <h2 className="text-xl w-[200px] text-center p-3">Science Fiction</h2>
         </div>
       </div>
   </div>
