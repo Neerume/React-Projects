@@ -1,15 +1,5 @@
 @import "tailwindcss";
 
-/* RESET */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 .eagle-lake-regular {
   font-family: "Eagle Lake", serif;
   font-weight: 400;
