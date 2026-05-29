@@ -1,17 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* IMPORTANT RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* RESET */
 body {
   margin: 0;
   padding: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .eagle-lake-regular {
