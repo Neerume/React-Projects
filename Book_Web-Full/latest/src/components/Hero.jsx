@@ -48,26 +48,26 @@ const Hero=()=>{
         <h1 className="text-4xl noto-serif font-semibold mb-2 ">Genres</h1>
         <p className="noto-serif pt-2 text-gray-500">Browse Our Extensive Collection of Books Across Different Genres.</p>
       </div>
-      <div className="flex gap-10 justify-center noto-seri">
-        <div className="flex flex-col items-center p-2">
-          <GiGhost className=" text-8xl border-gray-800 bg-gray-200 text-red-500 rounded-full p-4"/>
-          <h2 className="text-xl w-[200px] text-center p-3">Horror, Mystery and Thriller</h2>
+      <div className="flex md:gap-10 justify-center noto-seri">
+        <div className="flex flex-col items-center md:p-2">
+          <GiGhost className=" md:text-8xl text-5xl border-gray-800 bg-gray-200 text-red-500 rounded-full md:p-4 p-3"/>
+          <h2 className="md:text-xl text-sm md:w-[200px] w-[120px] text-center md:p-3 p-2">Horror, Mystery and Thriller</h2>
         </div>
-        <div className="flex flex-col items-center p-2">
-          <SiAnimedotjs className=" text-8xl border-gray-800 bg-gray-200 text-green-500 rounded-full p-4"/>
-          <h2 className="text-xl w-[200px] text-center p-3">Fight, action, story</h2>
+        <div className="flex flex-col items-center md:p-2">
+          <SiAnimedotjs className=" md:text-8xl text-5xl border-gray-800 bg-gray-200 text-green-500 rounded-full md:p-4 p-3"/>
+          <h2 className="md:text-xl text-sm md:w-[200px] w-[120px] text-center md:p-3 p-2">Action & Adventure</h2>
         </div>
-        <div className="flex flex-col items-center p-2">
-          <GiUnicorn className=" text-8xl border-gray-800 bg-gray-200 text-blue-500 rounded-full p-4"/>
-          <h2 className="text-xl w-[200px] text-center p-3">Fantasy</h2>
+        <div className="flex flex-col items-center md:p-2">
+          <GiUnicorn className=" md:text-8xl text-5xl border-gray-800 bg-gray-200 text-blue-500 rounded-full md:p-4 p-3"/>
+          <h2 className="md:text-xl text-sm md:w-[200px] w-[120px] text-center md:p-3 p-2">Fantasy</h2>
         </div>
-         <div className="flex flex-col items-center p-2">
-          <GiLovers className=" text-8xl border-gray-800 bg-gray-200 text-pink-500 rounded-full p-4"/>
-          <h2 className="text-xl w-[200px] text-center p-3">Romance</h2>
+         <div className="flex flex-col items-center md:p-2">
+          <GiLovers className=" md:text-8xl text-5xl border-gray-800 bg-gray-200 text-pink-500 rounded-full md:p-4 p-3"/>
+          <h2 className="md:text-xl text-sm md:w-[200px] w-[120px] text-center md:p-3 p-2">Romance</h2>
         </div>
-        <div className="flex flex-col items-center p-2">
-          <GiMadScientist className=" text-8xl border-gray-800 bg-gray-200 text-yellow-500 rounded-full p-4"/>
-          <h2 className="text-xl w-[200px] text-center p-3">Science Fiction</h2>
+        <div className="flex flex-col items-center md:p-2">
+          <GiMadScientist className=" md:text-8xl text-5xl border-gray-800 bg-gray-200 text-yellow-500 rounded-full md:p-4 p-3"/>
+          <h2 className="md:text-xl text-sm md:w-[200px] w-[120px] text-center md:p-3 p-2">Science Fiction</h2>
         </div>
       </div>
   </div>
