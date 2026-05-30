@@ -44,7 +44,7 @@ const Hero=()=>{
       </div>
 
       </div>
-      <div className="md:m-15 m-10">
+      <div className="md:m-20 m-10">
         <h1 className="text-4xl noto-serif font-semibold mb-2 ">Genres</h1>
         <p className="noto-serif pt-2 text-gray-500">Browse Our Extensive Collection of Books Across Different Genres.</p>
       </div>

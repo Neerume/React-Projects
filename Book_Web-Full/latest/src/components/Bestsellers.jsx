@@ -5,16 +5,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { motion } from "framer-motion";
 
 const BestSellers=()=>{
     const bestSellers = mangas.filter((manga) => manga.bestSeller);
 
  return(
-  <div className="md:m-15 m-10">
+  <div className="md:m-20 m-10">
     <h1 className="text-4xl font-semibold mb-2 ">Best Sellers</h1>
     <p className="noto-serif pt-2 text-gray-500">Discover Our Best-Selling Books That Have Captivated Readers Worldwide.</p>
 
-    <div className="relative mt-10">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false }}
+      className="relative mt-10">
         <Swiper
       modules={[Navigation]}
       navigation
@@ -35,7 +41,7 @@ const BestSellers=()=>{
       }
       </Swiper>
 
-    </div>
+    </motion.div>
   </div>
  );
 }
