@@ -1,7 +1,8 @@
 import react, {useState} from 'react'
 import logo from '../assets/logoo.png'
+import { Link } from "react-router-dom";
 
-const Navbar=()=>{
+const Navbar=({setShowLogin })=>{
  return(
   <div className ="flex justify-between items-center shadow-lg">
 
@@ -22,12 +23,11 @@ const Navbar=()=>{
           Ctrl+K
         </button>
         </div>
-        <button className="text-xl p-1">🔔</button>
-        <button className="text-xl p-1">🛍️</button>
-        <button className="text-xl p-1">👤</button>
-      </div>
-      
+        <button className="text-xl p-1 cursor-pointer">🔔</button>
+        <button className="text-xl p-1 cursor-pointer">🛍️</button>
+        <button className="text-xl p-1 cursor-pointer" onClick={()=>setShowLogin(true)}>LOGIN</button>
 
+      </div>
   </div>
  )
 }
