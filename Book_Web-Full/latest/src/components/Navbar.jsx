@@ -26,7 +26,6 @@ const Navbar=({setShowLogin })=>{
         <button className="text-xl p-1 cursor-pointer">🔔</button>
         <button className="text-xl p-1 cursor-pointer">🛍️</button>
         <button className="text-xl p-1 cursor-pointer" onClick={()=>setShowLogin(true)}>LOGIN</button>
-
       </div>
   </div>
  )
