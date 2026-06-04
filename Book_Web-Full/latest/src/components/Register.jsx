@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { CiFacebook } from "react-icons/ci";
 import { TfiEmail } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 
 const Register = ({ setShowLogin, setShowRegister }) => {
   const [emailMode, setEmailMode] = useState(false);
@@ -68,9 +69,10 @@ const Register = ({ setShowLogin, setShowRegister }) => {
 
               <p className="text-sm text-center">
                 By creating an account I accept the{" "}
-                <a href="#" className="text-blue-500">
+                <Link to="/terms-conditions"  className="text-blue-500" onClick={() => setShowRegister(false)}
+>
                   Terms and Conditions
-                </a>
+                </Link>
               </p>
             </div>
           </>
@@ -93,9 +95,10 @@ const Register = ({ setShowLogin, setShowRegister }) => {
               </button>
                  <p className="text-sm text-center">
                 By creating an account I accept the{" "}
-                <a href="#" className="text-blue-500">
+                <Link to="/terms-conditions" className="text-blue-500  
+                "  onClick={() => setShowRegister(false)}>
                   Terms and Conditions
-                </a>
+                </Link>
               </p>
               <button
                 type="button"

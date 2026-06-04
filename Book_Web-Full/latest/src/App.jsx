@@ -1,28 +1,39 @@
 import react,{useState} from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import BestSellers from "./components/Bestsellers";
-import Newarrival from "./components/Newarrivals";
-import Usedbooks from "./components/Usedbooks";
-import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register"
+import {Route,Routes} from "react-router-dom";
+import TermsConditions from "./components/TermsConditions";
+import Home from "./Home";
 
 const App=()=>{
   const[showLogin,setShowLogin]= useState(false);
   const[showRegister, setShowRegister]= useState(false);
   return(
     <div>
-      <Navbar setShowLogin={setShowLogin} setShowRegister={setShowRegister}/>
-      <Hero/>
-      <BestSellers/>
-      <Newarrival/>
-      <Usedbooks/>
-      <Footer/>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              setShowLogin={setShowLogin}
+              setShowRegister={setShowRegister}
+            />
+          }
+        />
+
+        <Route
+          path="/terms-conditions"
+          element={<TermsConditions />}
+        />
+      </Routes>
+
       {showLogin && <Login setShowLogin={setShowLogin} setShowRegister={setShowRegister}/>}
       {showRegister && <Register setShowRegister={setShowRegister} setShowLogin={setShowLogin} />}
 
     </div>
+    
     
   )
 }
