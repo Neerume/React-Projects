@@ -6,16 +6,19 @@ import Register from "./components/Register"
 import {Route,Routes} from "react-router-dom";
 import TermsConditions from "./components/TermsConditions";
 import Home from "./Home";
+import Genrepage from "./components/Genrepage";
 
 const App=()=>{
   const[showLogin,setShowLogin]= useState(false);
   const[showRegister, setShowRegister]= useState(false);
   return(
     <div>
+        <Navbar
+        setShowLogin={setShowLogin}
+        setShowRegister={setShowRegister}
+      />
       <Routes>
-        <Route
-          path="/"
-          element={
+        <Route path="/" element={
             <Home
               setShowLogin={setShowLogin}
               setShowRegister={setShowRegister}
@@ -27,6 +30,8 @@ const App=()=>{
           path="/terms-conditions"
           element={<TermsConditions />}
         />
+
+      <Route path="/genres/:genre" element={<Genrepage />} />
       </Routes>
 
       {showLogin && <Login setShowLogin={setShowLogin} setShowRegister={setShowRegister}/>}

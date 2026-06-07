@@ -1,9 +1,12 @@
 import React, {useState} from "react";
 import mangas from "../data/mangas";
 import BookCard from "./BookCard";
+import { CiSearch } from "react-icons/ci";
+
 
 const Genrepage = () => {
   const [genre, setGenre] = useState("All");
+  const [search, setSearch] = useState("");
   const genres=["All",
     "Action",
     "Horror",
@@ -11,17 +14,22 @@ const Genrepage = () => {
     "Romance",
     "Science Fiction",
   ]
-    const filteredBooks =
-    genre === "All"
-      ? mangas
-      : mangas.filter(
-          (manga) => manga.category === genre
-        );
+  const filteredBooks = mangas.filter((manga) => {
+  const matchesGenre =
+    genre === "All" || manga.category === genre;
+
+  const matchesSearch =
+    manga.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+  return matchesGenre && matchesSearch;
+});
 
   return(
    <div className="flex gap-8 p-8">
 
-      {/* ================= LEFT SIDE (FILTERS) ================= */}
+      {/* LEFT SIDE */}
       <div className="w-60">
 
         <h2 className="text-2xl font-bold mb-4">
@@ -30,33 +38,34 @@ const Genrepage = () => {
 
         <div className="flex flex-col gap-2">
 
-          {genres.map((genre) => (
-            <button
-              key={genre}
-              onClick={() => setSelectedGenre(genre)}
-
-              /*
-                Active genre styling:
-                If clicked genre == selectedGenre → highlight it
-              */
-              className={`text-left p-2 rounded-md transition ${
-                selectedGenre === genre
-                  ? "bg-blue-500 text-white"
-                  : "hover:bg-gray-100"
-              }`}
-            >
-              {genre}
-            </button>
-          ))}
+          {genres.map((item) => (
+          <button
+            key={item}
+            onClick={() => setGenre(item)}
+            className={`text-left p-2 rounded-md transition ${
+              genre === item
+                ? "bg-blue-500 text-white"
+                : "hover:bg-gray-100"
+            }`}
+          >
+            {item}
+          </button>
+        ))}
         </div>
       </div>
 
-      {/* ================= RIGHT SIDE (BOOKS) ================= */}
+      {/*  RIGHT SIDE (BOOKS) */}
       <div className="flex-1">
 
-        <h1 className="text-3xl font-bold mb-6">
-          {selectedGenre} Books
-        </h1>
+        <div className="flex flex-col md:flex-row md:justify-between gap-4 mb-6 ">
+              <h1 className="text-3xl font-bold mb-6">
+                {genre} Books
+              </h1>
+              <div className="flex items-center gap-2 border p-2 rounded-md w-full max-w-sm">
+                <input type="text"  placeholder="Search by title or author"    value={search} onChange={(e) => setSearch(e.target.value)}   className="w-full outline-none"/>  
+                <CiSearch />
+              </div>
+        </div>
 
         {/* GRID OF BOOKS */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

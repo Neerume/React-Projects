@@ -1,5 +1,4 @@
 import react,{useState} from "react";
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import BestSellers from "./components/Bestsellers";
 import Newarrival from "./components/Newarrivals";
@@ -12,7 +11,6 @@ const Home=({ setShowLogin, setShowRegister })=>{
 
   return(
     <div>
-      <Navbar setShowLogin={setShowLogin} setShowRegister={setShowRegister}/>
       <Hero/>
       <BestSellers/>
       <Newarrival/>
