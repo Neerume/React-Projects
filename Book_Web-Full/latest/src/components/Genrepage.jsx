@@ -1,11 +1,19 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import mangas from "../data/mangas";
 import BookCard from "./BookCard";
 import { CiSearch } from "react-icons/ci";
-
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Genrepage = () => {
-  const [genre, setGenre] = useState("All");
+  const navigate = useNavigate();
+  const { genre: routeGenre } = useParams();
+  const [genre, setGenre] = useState(routeGenre || "All");  
+
+  useEffect(() => {
+  setGenre(routeGenre || "All");
+}, [routeGenre]);
+
   const [search, setSearch] = useState("");
   const genres=["All",
     "Action",
@@ -41,7 +49,7 @@ const Genrepage = () => {
           {genres.map((item) => (
           <button
             key={item}
-            onClick={() => setGenre(item)}
+            onClick={() => navigate(`/genres/${item}`)}
             className={`text-left p-2 rounded-md transition ${
               genre === item
                 ? "bg-blue-500 text-white"
