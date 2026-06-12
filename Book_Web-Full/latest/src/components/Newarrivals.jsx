@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
 
-const Newarrivals=()=>{
+const Newarrivals=({ handleAddToCart })=>{
   const newArrivals= mangas.filter((manga)=>manga.newArrival);
   return(
     <div className="md:m-20 m-10">
@@ -34,7 +34,7 @@ const Newarrivals=()=>{
       >
         {newArrivals.map((manga)=>(
           <SwiperSlide key={manga.id}>
-            <BookCard manga ={manga}/>
+            <BookCard manga ={manga} onAddToCart={handleAddToCart} />
           </SwiperSlide>
         ))
       }

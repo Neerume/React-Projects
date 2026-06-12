@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
 
-const BestSellers=()=>{
+const BestSellers=({ handleAddToCart })=>{
     const bestSellers = mangas.filter((manga) => manga.bestSeller);
 
  return(
@@ -35,7 +35,7 @@ const BestSellers=()=>{
 >
       {bestSellers.map((manga)=>(
       <SwiperSlide key ={manga.id}>
-        <BookCard manga={manga}/>
+        <BookCard manga={manga} onAddToCart={handleAddToCart} />
       </SwiperSlide>
       ))  
       }
