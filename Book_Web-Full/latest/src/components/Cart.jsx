@@ -11,8 +11,17 @@ const Cart=({cart})=>{
       ) : (
         cart.map((item) => (
           <div key={item.id}>
-            <h2>{item.title}</h2>
-            <p>{item.price}</p>
+            <div className="flex my-10 gap-10">
+              <img src={item.image} alt={item.title} className="w-32 h-48 md:w-40 md:h-60  object-cover rounded-lg"/>  
+              <div className="flex gap-80">
+                <div>
+                  <h2 className="text-2xl font-semibold">{item.title}</h2>    
+                  <p className="text-lg pt-2">By {item.author}</p>
+                </div>
+                <p className='text-3xl font-semibold'>{item.price}</p>
+              </div>
+              
+            </div>
           </div>
         ))
       )}
