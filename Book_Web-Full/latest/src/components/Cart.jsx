@@ -3,8 +3,8 @@ import React from 'react';
 const Cart=({cart})=>{
   return(
     <>
-     <div>
-      <h1>My Cart</h1>
+     <div className ="mx-8 my-8">
+      <h1 className="text-5xl font-semibold">My Cart $()</h1> 
 
       {cart.length === 0 ? (
         <p>No items in cart</p>

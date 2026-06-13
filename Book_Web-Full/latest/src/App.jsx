@@ -1,4 +1,4 @@
-import react,{useState} from "react";
+import react,{useState, useEffect} from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Login from "./components/Login";
@@ -17,7 +17,14 @@ const App=()=>{
   const[showRegister, setShowRegister]= useState(false);
   const navigate = useNavigate();
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(()=>{
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });  
+      useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
+
   const handleAddToCart = (manga) => {
     setCart((prevCart) => [...prevCart, manga]);
     console.log("added", manga);
@@ -35,6 +42,7 @@ const App=()=>{
         <Navbar
         setShowLogin={setShowLogin}
         setShowRegister={setShowRegister}
+        cart={cart}
       />
       <Routes>
             <Route path="/" element={

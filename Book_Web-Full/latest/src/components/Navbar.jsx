@@ -2,7 +2,7 @@ import react, {useState} from 'react'
 import logo from '../assets/logoo.png'
 import { Link } from "react-router-dom";
 
-const Navbar=({setShowLogin })=>{
+const Navbar=({setShowLogin, cart })=>{
  return(
   <div className ="flex justify-between items-center shadow-lg">
 
@@ -24,7 +24,16 @@ const Navbar=({setShowLogin })=>{
         </button>
         </div>
         <button className="text-xl p-1 cursor-pointer">🔔</button>
-        <button className="text-xl p-1 cursor-pointer">🛍️</button>
+        
+        <div className="relative">
+          <button className="text-xl p-1 cursor-pointer">🛍️</button>
+
+          {cart.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              {cart.length}
+            </span>
+          )}
+        </div>
         <button className="text-xl p-1 cursor-pointer" onClick={()=>setShowLogin(true)}>LOGIN</button>
       </div>
   </div>
