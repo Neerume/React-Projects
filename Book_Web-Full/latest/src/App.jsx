@@ -25,16 +25,35 @@ const App=()=>{
     localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
-  const handleAddToCart = (manga) => {
-    setCart((prevCart) => [...prevCart, manga]);
-    console.log("added", manga);
+    const handleAddToCart = (manga) => {
+      setCart((prevCart) => [...prevCart, {...manga, quantity:1}]);
+      console.log("added", manga);
 
+      
     toast(
       <div>
         <p>Added to cart successfully 🛒</p>
         <button onClick={() => navigate("/cart")}  className="text-blue-500 underline">View Cart  </button>
       </div>
     )
+  };
+  const increaseQty = (id) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+   const decreaseQty = (id) => {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
   };
 
   return(
@@ -56,7 +75,10 @@ const App=()=>{
 
           <Route path="/terms-conditions" element={<TermsConditions />}/>
           <Route path="/genres/:genre" element={<Genrepage />} />
-          <Route path="/cart" element={<Cart cart={cart} />} />
+          <Route path="/cart" element={<Cart cart={cart}
+            increaseQty={increaseQty}
+            decreaseQty={decreaseQty}
+               />} />
       
       </Routes>
 

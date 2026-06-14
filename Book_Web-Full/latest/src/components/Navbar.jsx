@@ -25,7 +25,7 @@ const Navbar=({setShowLogin, cart })=>{
         </div>
         <button className="text-xl p-1 cursor-pointer">🔔</button>
         
-        <div className="relative">
+        <Link to="/cart" className="relative">
           <button className="text-xl p-1 cursor-pointer">🛍️</button>
 
           {cart.length > 0 && (
@@ -33,7 +33,7 @@ const Navbar=({setShowLogin, cart })=>{
               {cart.length}
             </span>
           )}
-        </div>
+        </Link>
         <button className="text-xl p-1 cursor-pointer" onClick={()=>setShowLogin(true)}>LOGIN</button>
       </div>
   </div>
