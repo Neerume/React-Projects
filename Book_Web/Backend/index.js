@@ -24,3 +24,11 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=>{ 
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+
+//connect routes in indexx.js
+
+const bookRoutes = require('./routes/BookRoutes');
+
+app.use("/api/books", bookRoutes);
