@@ -27,7 +27,7 @@ app.listen(PORT, ()=>{
 
 
 
-//connect routes in indexx.js
+//connect bookroutes in index.js
 
 const bookRoutes = require('./routes/BookRoutes');
 

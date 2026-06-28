@@ -23,7 +23,20 @@ router.post("/",async (req,res)=>{
   catch(err){
     res.status(400).json({message:err.message})
   }
-
 })
+
+  router.get("/:id", async(req, res)=>{
+    try{
+      const book = await Book.findById(req.params.id);
+      if(book==null){
+        return res.status(404).json(message="Book not found")
+      }
+      res.json(book)
+    }
+    catch(err){
+      res.status(404).json({message:err.message})
+    }
+  })
+
 
 module.exports = router;
