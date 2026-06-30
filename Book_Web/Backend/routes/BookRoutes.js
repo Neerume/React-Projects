@@ -60,9 +60,9 @@ router.post("/",async (req,res)=>{
     try{
       const book = await Book.findById(req.params.id);
       if(book==null){
-        return res.status(400).json({message:"Book not found"})
+        return res.status(404).json({message:"Book not found"})
       }
-      await book.remove();
+      await book.deleteOne();
       res.json({message:"Book deleted successfully"})
       
     }

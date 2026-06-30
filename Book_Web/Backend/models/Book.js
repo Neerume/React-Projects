@@ -20,7 +20,11 @@ const bookSchema = new mongoose.Schema({
   description: String,
   category: String,
   tags: [String],
-  stock: Number,
+  stock:{
+    type:Number,
+    default:0,
+    min:0
+  },
   bestSeller: Boolean,
   newArrival: Boolean,
   discount: Boolean,
