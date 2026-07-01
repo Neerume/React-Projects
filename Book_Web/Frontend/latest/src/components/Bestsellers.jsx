@@ -1,5 +1,4 @@
 import react, {useState, useEffect} from 'react'
-import mangas  from "../data/mangas";
 import BookCard from "../components/BookCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -7,8 +6,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
 
-const BestSellers=({ handleAddToCart })=>{
-    const bestSellers = mangas.filter((manga) => manga.bestSeller);
+const BestSellers=({ handleAddToCart , books, cart})=>{
+    const bestSellers = books.filter((book) => book.bestSeller);
 
  return(
   <div className="md:m-20 m-10">
@@ -33,9 +32,9 @@ const BestSellers=({ handleAddToCart })=>{
         1280: { slidesPerView: 4 },
       }}
 >
-      {bestSellers.map((manga)=>(
-      <SwiperSlide key ={manga.id}>
-        <BookCard manga={manga} onAddToCart={handleAddToCart} />
+      {bestSellers.map((book)=>(
+      <SwiperSlide key ={book.id}>
+        <BookCard book={book} onAddToCart={handleAddToCart} cart={cart} />
       </SwiperSlide>
       ))  
       }

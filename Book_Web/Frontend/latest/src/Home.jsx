@@ -7,14 +7,15 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register"
 
-const Home=({ setShowLogin, setShowRegister, handleAddToCart })=>{
+const Home=({ setShowLogin, setShowRegister, handleAddToCart, cart, books })=>{
 
   return(
     <div>
       <Hero/>
-      <BestSellers handleAddToCart={handleAddToCart} cart={cart} />
-      <Newarrival handleAddToCart={handleAddToCart} cart={cart} />
-      <Usedbooks handleAddToCart={handleAddToCart} cart={cart} />
+  
+      <BestSellers handleAddToCart={handleAddToCart} cart={cart} books={books} />
+      {/* <Newarrival handleAddToCart={handleAddToCart} cart={cart} books={books} />
+      <Usedbooks handleAddToCart={handleAddToCart} cart={cart} books={books} /> */}
       <Footer/>
     
 

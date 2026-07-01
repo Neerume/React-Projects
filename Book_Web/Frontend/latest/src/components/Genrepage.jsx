@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import mangas from "../data/mangas";
 import BookCard from "./BookCard";
 import { CiSearch } from "react-icons/ci";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Genrepage = ({handleAddToCart, cart}) => {
+const Genrepage = ({handleAddToCart, cart, books}) => {
+
   const navigate = useNavigate();
   const { genre: routeGenre } = useParams();
   const [genre, setGenre] = useState(routeGenre || "All");  
@@ -22,12 +22,12 @@ const Genrepage = ({handleAddToCart, cart}) => {
     "Romance",
     "Science Fiction",
   ]
-  const filteredBooks = mangas.filter((manga) => {
+  const filteredBooks = books.filter((book) => {
   const matchesGenre =
-    genre === "All" || manga.category === genre;
+    genre === "All" || book.category === genre;
 
   const matchesSearch =
-    manga.title
+    book.title
       .toLowerCase()
       .includes(search.toLowerCase());
 
@@ -78,10 +78,10 @@ const Genrepage = ({handleAddToCart, cart}) => {
         {/* GRID OF BOOKS */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-          {filteredBooks.map((manga) => (
+          {filteredBooks.map((book) => (
             <BookCard
-              key={manga.id}
-              manga={manga}
+              key={book._id}
+              book={book}
               onAddToCart={handleAddToCart}
               cart={cart}
             />
